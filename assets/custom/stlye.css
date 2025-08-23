@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  min-height: 100vh;
+}
+
+.hover-news:hover {
+  scale: 1.03;
+  transition: .5s;
+}
+
+.image-banner {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.image-news {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-wrap {
+  display: inline-flex;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}

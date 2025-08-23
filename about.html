@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TITAN-EV</title>
+  <link rel="stylesheet" href="stlye.css" />
+  <link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: center;
+    }
+
+    .section img {
+      flex: 1 1 400px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .section .content {
+      flex: 1 1 400px;
+    }
+
+    .section .content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1c1c1c;
+    }
+
+    .section .content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .values {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .values h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .values .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .values .card {
+      background-color: #333;
+      padding: 1.5rem;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .values .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .values .card h3 {
+      margin-bottom: 1rem;
+      color: #f1c40f;
+    }
+
+    .values .card p {
+      color: #ddd;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .values .cards {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>เกี่ยวกับเรา</h1>
+    <p>TITAN-EV มุ่งมั่นสร้างสรรค์รถไฟฟ้าแห่งอนาคตที่ยั่งยืนและมีคุณภาพสูง</p>
+  </header>
+
+  <div class="container">
+    <div class="section">
+      <img src="images/img/Logo.titan-ev.jpg" alt="สำนักงานใหญ่ TITAN-EV">
+      <div class="content">
+        <h2>วิสัยทัศน์ของเรา</h2>
+        <p>
+          TITAN-EV มุ่งพัฒนาเทคโนโลยียานยนต์ไฟฟ้าให้ตอบโจทย์ทั้งประสิทธิภาพ ความปลอดภัย และเป็นมิตรกับสิ่งแวดล้อม เราเชื่อว่าการขับเคลื่อนด้วยพลังงานสะอาดคือก้าวสำคัญสู่อนาคตที่ยั่งยืน
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="content">
+        <h2>พันธกิจของเรา</h2>
+        <p>
+          เรามุ่งเน้นการสร้างสรรค์นวัตกรรมและการบริการที่ดีที่สุดสำหรับลูกค้า ทั้งการพัฒนาเทคโนโลยีรถยนต์ไฟฟ้า ระบบชาร์จที่สะดวกสบาย และการให้คำปรึกษาด้านพลังงานสะอาด เพื่อยกระดับคุณภาพชีวิตและลดผลกระทบต่อสิ่งแวดล้อม
+        </p>
+      </div>
+      <img src="images/img/Logo.titan-ev.jpg" alt="เทคโนโลยียานยนต์ไฟฟ้า">
+    </div>
+  </div>
+
+  <div class="values">
+    <h2>ค่านิยมของเรา</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>นวัตกรรม</h3>
+        <p>เราพัฒนารถไฟฟ้าที่ล้ำสมัยและตอบโจทย์ความต้องการของลูกค้าอย่างต่อเนื่อง</p>
+      </div>
+      <div class="card">
+        <h3>ความยั่งยืน</h3>
+        <p>เราเชื่อในการสร้างอนาคตที่สะอาดและลดผลกระทบต่อสิ่งแวดล้อม</p>
+      </div>
+      <div class="card">
+        <h3>คุณภาพ</h3>
+        <p>ทุกผลิตภัณฑ์ของเราผ่านมาตรฐานสูงสุดเพื่อความพึงพอใจของลูกค้า</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 TITAN-EV. สงวนลิขสิทธิ์ทุกประการ
+  </footer>
+</body>
+</html>
