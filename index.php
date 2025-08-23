@@ -13,18 +13,9 @@
     <?php include('include/navbar.php'); ?>
 
     <div class="container">
-        <section class="welcome-section">
-            <div class="welcome-content">
-                <h1 class="welcome-title">ยินดีต้อนรับสู่ <span class="highlight">TITAN-EV</span></h1>
-            </div>
-        </section>
-
-        </header>
-
-        </header>
 
         <!-- Banner -->
-        <div id="carousel" class="carousel slide mt-5">
+        <div id="carousel" class="carousel slide mt-custom">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
@@ -56,7 +47,7 @@
         <div class="carousel-container">
             <div class="carousel-wrap">
                 <div class="col-md-3">
-                    <div class="card shadow my-3 me-4 hover-news">
+                    <div class="card my-3 me-4 hover-news">
                         <a href="#" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.1.jpg" class="image-news rounded" alt="News-1">
                             <div class="card-body">
@@ -69,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow my-3 me-4 hover-news">
+                    <div class="card my-3 me-4 hover-news">
                         <a href="#" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.2.jpg" class="image-news rounded" alt="News-2">
                             <div class="card-body">
@@ -82,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow my-3 me-4 hover-news">
+                    <div class="card my-3 me-4 hover-news">
                         <a href="#" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.3.jpg" class="image-news rounded" alt="News-3">
                             <div class="card-body">
@@ -95,7 +86,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow my-3 me-4 hover-news">
+                    <div class="card my-3 me-4 hover-news">
                         <a href="#" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 4.jpg" class="image-news rounded" alt="News-4">
                             <div class="card-body">
@@ -108,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow my-3 me-4 hover-news">
+                    <div class="card my-3 me-4 hover-news">
                         <a href="#" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 5.jpg" class="image-news rounded" alt="News-5">
                             <div class="card-body">
@@ -127,9 +118,7 @@
 
     </div>
 
-    <div class="bg-dark text-center py-3">
-        <h6 class="text-light" href="#">© 2025 TITAN-EV <span class="ms-2">All rights reserved.</span></h6>
-    </div>
+    <?php include('include/footer.php'); ?>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>

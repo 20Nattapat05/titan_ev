@@ -12,55 +12,43 @@
 
     <?php include('include/navbar.php'); ?>
 
-    <body>
-
-        <h1>TITAN-EV PRODUCTS</h1>
-
-        <div class="product-grid">
-            <!-- การ์ดที่ 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/img/โปรดัก01.jpg" alt="TITAN EV Model 1">
-                </div>
-                <div class="product-info">
-                    <h2>TITAN EV Model X</h2>
-                    <p>พลังงานไฟฟ้า 1000W ความเร็วสูงสุด 60 กม./ชม.
-                        ดีไซน์ล้ำสมัย พร้อมระบบเบรกนิรภัย</p>
-                    <a href="#" class="btn">ดูรายละเอียด</a>
-                </div>
+    <div class="container">
+        <div class="row mt-custom">
+            <div class="col-md-10">
+                <form action="" method="post">
+                    <input class="form-control me-2" type="search" placeholder="ค้นหา...">
+                </form>
             </div>
-
-            <!-- การ์ดที่ 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/img/โปรดัก01.jpg" alt="TITAN EV Model 2">
-                </div>
-                <div class="product-info">
-                    <h2>TITAN EV City Pro</h2>
-                    <p>เหมาะกับการเดินทางในเมือง แบตเตอรี่ทนทาน
-                        ประหยัดพลังงาน พร้อมดีไซน์หรูหรา</p>
-                    <a href="#" class="btn">ดูรายละเอียด</a>
-                </div>
-            </div>
-
-            <!-- การ์ดที่ 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/img/โปรดัก01.jpg" alt="TITAN EV Model 3">
-                </div>
-                <div class="product-info">
-                    <h2>TITAN EV Sport</h2>
-                    <p>รุ่นสปอร์ตสำหรับผู้ชื่นชอบความแรง
-                        พร้อมระบบชาร์จเร็ว และไฟ LED รอบคัน</p>
-                    <a href="#" class="btn">ดูรายละเอียด</a>
-                </div>
+            <div class="col-md-2">
+                <form action="" method="post">
+                    <select class="form-select" id="sortOrder" aria-label="การเรียงลำดับ">
+                        <option value="new-to-old">ใหม่ไปเก่า</option>
+                        <option value="old-to-new">เก่าไปใหม่</option>
+                    </select>
+                </form>
             </div>
         </div>
 
-        <head>
+        <div class="row">
+            <?php
+            $i = 1;
+            while($i <= 4){
+              $i++;
+          ?>
+            <div class="col-md-4">
+                <div class="card my-3">
+                    <img src="assets/images/product-1.jpg" class="image-product rounded" alt="TITAN EV Model 1">
+                    <div class="card-body">
+                        <h4>TITAN EV Model X</h4>
+                        <h6>พลังงานไฟฟ้า 1000W ความเร็วสูงสุด 60 กม./ชม. <br> ดีไซน์ล้ำสมัย พร้อมระบบเบรกนิรภัย</h6>
+                        <a href="#" class="btn btn-dark float-end">ดูรายละเอียด</a>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
 
-            <p>© 2025 TITAN-EV</p>
-            </footer>
-    </body>
+    <?php include('include/footer.php'); ?>
 
 </html>

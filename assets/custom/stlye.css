@@ -16,8 +16,11 @@ body {
   background-repeat: no-repeat;
   position: relative;
   color: white;
-  min-height: 100vh;
+  min-height: 100%;
 }
+
+
+/* home-start */
 
 .hover-news:hover {
   scale: 1.03;
@@ -36,6 +39,10 @@ body {
   object-fit: cover;
 }
 
+.mt-custom {
+  margin-top: 6rem;
+}
+
 .carousel-container {
   overflow-x: auto;
   overflow-y: hidden;
@@ -52,3 +59,16 @@ body {
 .carousel-container::-webkit-scrollbar {
   display: none;
 }
+
+/* home-end */
+
+
+/* product-start */
+
+.image-product {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* product-end */
