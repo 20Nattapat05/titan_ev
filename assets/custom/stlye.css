@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,59 +18,6 @@ body {
   background-repeat: no-repeat;
   position: relative;
   color: white;
-  min-height: 100%;
+  height: 100vh;
 }
 
-
-/* home-start */
-
-.hover-news:hover {
-  scale: 1.03;
-  transition: .5s;
-}
-
-.image-banner {
-  width: 100%;
-  height: 800px;
-  object-fit: cover;
-}
-
-.image-news {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-.mt-custom {
-  margin-top: 6rem;
-}
-
-.carousel-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  cursor: grab;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel-wrap {
-  display: inline-flex;
-}
-
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* home-end */
-
-
-/* product-start */
-
-.image-product {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-/* product-end */
