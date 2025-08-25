@@ -19,9 +19,6 @@
                     <a class="nav-link" href="products.php">สินค้า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">เกี่ยวกับเรา</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">ข่าวสาร</a>
                 </li>
                 <li class="nav-item">
