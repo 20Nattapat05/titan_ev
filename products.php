@@ -36,7 +36,7 @@
               $i++;
           ?>
             <div class="col-md-4">
-                <div class="card my-3">
+                <div class="card my-3 hover-news">
                     <img src="assets/images/product-1.jpg" class="image-product rounded" alt="TITAN EV Model 1">
                     <div class="card-body">
                         <h4>TITAN EV Model X</h4>

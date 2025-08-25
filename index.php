@@ -43,6 +43,21 @@
         </div>
 
 
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="assets/images/news-1.jpg" class="image-news-main rounded" alt="news">
+            </div>
+            <div class="col-md-3">
+                <img src="assets/images/news-2.jpg" class="image-news-scon rounded" alt="news">
+                <img src="assets/images/news-3.jpg" class="image-news-scon rounded mt-3" alt="news">
+            </div>
+            <div class="col-md-3">
+                <img src="assets/images/news-3.jpg" class="image-news-scon rounded" alt="news">
+                <img src="assets/images/news-4.jpg" class="image-news-scon rounded mt-3" alt="news">
+            </div>
+        </div>
+
+
 
         <div class="carousel-container">
             <div class="carousel-wrap">
