@@ -87,3 +87,68 @@ const hamburger = document.querySelector("#toggle-btn");
 hamburger.addEventListener("click", function () {
   document.querySelector("#sidebar").classList.toggle("expand");
 });
+
+
+function updateTime() {
+      const now = new Date();
+      document.getElementById('currentTime').textContent = now.toLocaleString('th-TH');
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+
+    // Sales Chart
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+      type: 'line',
+      data: {
+        labels: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.'],
+        datasets: [{
+          label: 'ยอดขาย (คัน)',
+          data: [1200, 1350, 1100, 1400, 1250, 1547],
+          borderColor: '#0d6efd',
+          backgroundColor: 'rgba(13, 110, 253, 0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Popular Cars Chart
+    const carsCtx = document.getElementById('popularCarsChart').getContext('2d');
+    new Chart(carsCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['EV Compact', 'EV SUV', 'EV Luxury', 'EV Sport'],
+        datasets: [{
+          data: [35, 28, 22, 15],
+          backgroundColor: [
+            '#0d6efd',
+            '#198754',
+            '#ffc107',
+            '#dc3545'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    // Quick actions functions
+    function generateReport() {
+      alert('กำลังสร้างรายงาน...');
+    }
+
+    function viewAnalytics() {
+      alert('เปิดหน้าสถิติ...');
+    }

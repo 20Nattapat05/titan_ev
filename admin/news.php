@@ -24,13 +24,13 @@
     <div class="collapse navbar-collapse" id="mobileMenu">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Dashboard</a>
+          <a class="nav-link " href="index.php">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="car.php">รุ่นรถ EV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="news.php">ข่าวสาร</a>
+          <a class="nav-link active" href="news.php">ข่าวสาร</a>
         </li>
       </ul>
     </div>
@@ -48,9 +48,9 @@
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3">
-          <li><a href="index.php" class="nav-link text-light align-middle px-2 active"><i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span></a></li>
+          <li><a href="index.php" class="nav-link text-light align-middle px-2 "><i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span></a></li>
           <li><a href="car.php" class="nav-link text-light align-middle px-2"><i class="fs-4 bi-car-front-fill"></i><span class="ms-1 d-none d-sm-inline">รุ่นรถ EV</span></a></li>
-          <li><a href="news.php" class="nav-link text-light align-middle px-2"><i class="fs-4 bi-newspaper"></i><span class="ms-1 d-none d-sm-inline">ข่าวสาร</span></a></li>
+          <li><a href="news.php" class="nav-link text-light align-middle px-2 active"><i class="fs-4 bi-newspaper"></i><span class="ms-1 d-none d-sm-inline">ข่าวสาร</span></a></li>
         </ul>
       </div>
     </div>
@@ -76,7 +76,7 @@
 
                 <!-- Statistics Cards -->
                 <div class="row mb-4">
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-3 mb-3">
                     <div class="card stat-card border-0 shadow-sm h-100">
                       <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -84,7 +84,7 @@
                             <i class="bi-car-front-fill text-primary fs-4"></i>
                           </div>
                           <div>
-                            <h5 class="card-title mb-1">จำนวนรุ่นรถ EV</h5>
+                            <h5 class="card-title mb-1">รุ่นรถ EV</h5>
                             <h3 class="text-primary mb-0">24</h3>
                             <small class="text-success">+2 รุ่นใหม่</small>
                           </div>
@@ -93,8 +93,24 @@
                     </div>
                   </div>
 
+                  <div class="col-md-3 mb-3">
+                    <div class="card stat-card border-0 shadow-sm h-100">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center">
+                          <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                            <i class="bi-speedometer2 text-success fs-4"></i>
+                          </div>
+                          <div>
+                            <h5 class="card-title mb-1">ยอดขายเดือนนี้</h5>
+                            <h3 class="text-success mb-0">1,547</h3>
+                            <small class="text-success">+15.3%</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-3 mb-3">
                     <div class="card stat-card border-0 shadow-sm h-100">
                       <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -102,14 +118,32 @@
                             <i class="bi-newspaper text-warning fs-4"></i>
                           </div>
                           <div>
-                            <h5 class="card-title mb-1">บทความทั้งหมด</h5>
+                            <h5 class="card-title mb-1">ข่าวสารใหม่</h5>
                             <h3 class="text-warning mb-0">12</h3>
+                            <small class="text-muted">ข่าวใหม่วันนี้</small>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
+                  <div class="col-md-3 mb-3">
+                    <div class="card stat-card border-0 shadow-sm h-100">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center">
+                          <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                            <i class="bi-people text-info fs-4"></i>
+                          </div>
+                          <div>
+                            <h5 class="card-title mb-1">ผู้เข้าชมเว็บ</h5>
+                            <h3 class="text-info mb-0">8,432</h3>
+                            <small class="text-success">+8.2%</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Data Tables Section -->
                 <div class="row mb-4">

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('Kanit-Regular.woff2') format('woff2'),
+    url('Kanit-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  height: 100vh;
+}
+
+/* Desktop Sidebar */
+@media (min-width: 768px) {
+  .sidebar .nav-link.active {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+    background-color: #0d6efd;
+    padding: 10px 20px;
+    color: #fff !important;
+  }
+
+  .sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+}
+
+/* Mobile Navbar */
+@media (max-width: 767.98px) {
+  .mobile-nav .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff !important;
+    border-radius: 4px;
+    padding: 8px 12px;
+  }
+
+  .mobile-nav .nav-link:hover {
+    background-color: rgba(13, 110, 253, 0.2);
+    transform: none;
+  }
+}
+
+
+.stat-card {
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.recent-activity {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  border-left: 3px solid #0d6efd;
+  transition: all 0.2s;
+}
+
+.activity-item:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+}

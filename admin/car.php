@@ -12,48 +12,48 @@
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark d-md-none mobile-navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="../assets/images/logo.png" alt="Logo" width="30" height="30">
-      EV Factory
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mobileMenu">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="car.php">รุ่นรถ EV</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="news.php">ข่าวสาร</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="container-fluid">
-  <div class="row flex-nowrap">
-    <!-- Desktop Sidebar -->
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-none d-md-block sidebar">
-      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
-          <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-          <span class="fs-5 d-none d-sm-inline ms-2">EV Factory Admin</span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3">
-          <li><a href="index.php" class="nav-link text-light align-middle px-2 active"><i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span></a></li>
-          <li><a href="car.php" class="nav-link text-light align-middle px-2"><i class="fs-4 bi-car-front-fill"></i><span class="ms-1 d-none d-sm-inline">รุ่นรถ EV</span></a></li>
-          <li><a href="news.php" class="nav-link text-light align-middle px-2"><i class="fs-4 bi-newspaper"></i><span class="ms-1 d-none d-sm-inline">ข่าวสาร</span></a></li>
+  <nav class="navbar navbar-dark bg-dark d-md-none mobile-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/images/logo.png" alt="Logo" width="30" height="30">
+        EV Factory
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mobileMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.php">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="car.php">รุ่นรถ EV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.php">ข่าวสาร</a>
+          </li>
         </ul>
       </div>
     </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <!-- Desktop Sidebar -->
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-none d-md-block sidebar">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
+            <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
+            <span class="fs-5 d-none d-sm-inline ms-2">EV Factory Admin</span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3">
+            <li><a href="index.php" class="nav-link text-light align-middle px-2 "><i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span></a></li>
+            <li><a href="car.php" class="nav-link text-light align-middle px-2 active"><i class="fs-4 bi-car-front-fill"></i><span class="ms-1 d-none d-sm-inline">รุ่นรถ EV</span></a></li>
+            <li><a href="news.php" class="nav-link text-light align-middle px-2"><i class="fs-4 bi-newspaper"></i><span class="ms-1 d-none d-sm-inline">ข่าวสาร</span></a></li>
+          </ul>
+        </div>
+      </div>
 
 
       <div class="container-fluid col py-3">
@@ -76,7 +76,7 @@
 
                 <!-- Statistics Cards -->
                 <div class="row mb-4">
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-3 mb-3">
                     <div class="card stat-card border-0 shadow-sm h-100">
                       <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -84,7 +84,7 @@
                             <i class="bi-car-front-fill text-primary fs-4"></i>
                           </div>
                           <div>
-                            <h5 class="card-title mb-1">จำนวนรุ่นรถ EV</h5>
+                            <h5 class="card-title mb-1">รุ่นรถ EV</h5>
                             <h3 class="text-primary mb-0">24</h3>
                             <small class="text-success">+2 รุ่นใหม่</small>
                           </div>
@@ -93,8 +93,24 @@
                     </div>
                   </div>
 
+                  <div class="col-md-3 mb-3">
+                    <div class="card stat-card border-0 shadow-sm h-100">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center">
+                          <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                            <i class="bi-speedometer2 text-success fs-4"></i>
+                          </div>
+                          <div>
+                            <h5 class="card-title mb-1">ยอดขายเดือนนี้</h5>
+                            <h3 class="text-success mb-0">1,547</h3>
+                            <small class="text-success">+15.3%</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-3 mb-3">
                     <div class="card stat-card border-0 shadow-sm h-100">
                       <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -102,14 +118,32 @@
                             <i class="bi-newspaper text-warning fs-4"></i>
                           </div>
                           <div>
-                            <h5 class="card-title mb-1">บทความทั้งหมด</h5>
+                            <h5 class="card-title mb-1">ข่าวสารใหม่</h5>
                             <h3 class="text-warning mb-0">12</h3>
+                            <small class="text-muted">ข่าวใหม่วันนี้</small>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
+                  <div class="col-md-3 mb-3">
+                    <div class="card stat-card border-0 shadow-sm h-100">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center">
+                          <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                            <i class="bi-people text-info fs-4"></i>
+                          </div>
+                          <div>
+                            <h5 class="card-title mb-1">ผู้เข้าชมเว็บ</h5>
+                            <h3 class="text-info mb-0">8,432</h3>
+                            <small class="text-success">+8.2%</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Data Tables Section -->
                 <div class="row mb-4">
