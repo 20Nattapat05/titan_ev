@@ -43,12 +43,27 @@
         </div>
 
 
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="assets/images/news-1.jpg" class="image-news-main rounded" alt="news">
+            </div>
+            <div class="col-md-3">
+                <img src="assets/images/news-2.jpg" class="image-news-scon rounded" alt="news">
+                <img src="assets/images/news-3.jpg" class="image-news-scon rounded mt-3" alt="news">
+            </div>
+            <div class="col-md-3">
+                <img src="assets/images/news-3.jpg" class="image-news-scon rounded" alt="news">
+                <img src="assets/images/news-4.jpg" class="image-news-scon rounded mt-3" alt="news">
+            </div>
+        </div>
+
+
 
         <div class="carousel-container">
             <div class="carousel-wrap">
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="#" class="text-dark text-decoration-none">
+                        <a href="news-detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.1.jpg" class="image-news rounded" alt="News-1">
                             <div class="card-body">
                                 <h5 class="fw-bold">EVENT</h5>
@@ -61,7 +76,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="#" class="text-dark text-decoration-none">
+                        <a href="news-detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.2.jpg" class="image-news rounded" alt="News-2">
                             <div class="card-body">
                                 <h5 class="fw-bold">EVENT</h5>
@@ -74,7 +89,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="#" class="text-dark text-decoration-none">
+                        <a href="news-detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.3.jpg" class="image-news rounded" alt="News-3">
                             <div class="card-body">
                                 <h5 class="fw-bold">EVENT</h5>
@@ -87,7 +102,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="#" class="text-dark text-decoration-none">
+                        <a href="news-detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 4.jpg" class="image-news rounded" alt="News-4">
                             <div class="card-body">
                                 <h5 class="fw-bold">EVENT</h5>
@@ -100,7 +115,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="#" class="text-dark text-decoration-none">
+                        <a href="news-detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 5.jpg" class="image-news rounded" alt="News-5">
                             <div class="card-body">
                                 <h5 class="fw-bold">EVENT</h5>
