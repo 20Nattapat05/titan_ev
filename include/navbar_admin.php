@@ -1,25 +1,53 @@
-<nav class="navbar navbar-dark bg-dark d-md-none mobile-navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../assets/images/logo.png" alt="Logo" width="30" height="30">
-            EV Factory
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu"
-            aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mobileMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link " href="index.php">Inbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="car.php">รุ่นรถ EV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="news.php">ข่าวสาร</a>
-                </li>
-            </ul>
+<div class="card shadow-sm bg-dark my-3">
+    <div class="card-body">
+        <h2 class="text-light mb-1">Dashboard Overview</h2>
+        <p class="text-light mb-4">ภาพรวมระบบจัดการโรงงานรถยนต์ไฟฟ้า</p>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card stat-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-primary bg-opacity-10 px-4 py-3 me-3">
+                                <i class="bi-car-front-fill text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-1">จำนวนรุ่นรถ EV</h5>
+                                <h3 class="text-primary mb-0">24</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-warning bg-opacity-10 px-4 py-3 me-3">
+                                <i class="bi-newspaper text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-1">บทความทั้งหมด</h5>
+                                <h3 class="text-warning mb-0">12</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-success bg-opacity-10 px-4 py-3 me-3">
+                                <i class="bi-envelope-arrow-up-fill text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-1">ข้อความที่ยังไม่ได้อ่าน</h5>
+                                <h3 class="text-success mb-0">12 <span class="badge fs-6 rounded-pill text-bg-danger">+2</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</div>
