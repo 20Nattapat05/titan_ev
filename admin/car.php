@@ -102,10 +102,6 @@
           </div>
         </div>
       </div>
-      <!-- end card -->
-    </div>
-  </div>
-</div>
 
 <!-- Modal เพิ่มรุ่นรถ -->
 <div class="modal fade" id="addCarModal" tabindex="-1" aria-hidden="true">
