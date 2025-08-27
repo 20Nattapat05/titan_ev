@@ -142,7 +142,7 @@
 
 
         </div>
-        <div class="card shadow-sm bg-dark mt-4">
+        <div class="card shadow-sm bg-dark mt-4 overflow-auto" style="height: 60vh;">
           <div class="card-body">
 
           </div>
