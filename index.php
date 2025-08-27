@@ -61,9 +61,15 @@
 
         <div class="carousel-container">
             <div class="carousel-wrap">
+                <?php
+                    $i = 1;
+                    while($i <= 5){
+                    $i++;
+                ?>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news_detail.php" class="text-dark text-decoration-none">
+                        <a href="#" class="text-dark text-decoration-none" data-bs-toggle="modal"
+                            data-bs-target="#detail-1">
                             <img src="assets/images/การ์ดสไลด์.1.jpg" class="image-news rounded" alt="News-1">
                             <div class="card-body">
                                 <h5 class="fw-bold">News</h5>
@@ -74,58 +80,25 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card my-3 me-4 hover-news">
-                        <a href="news_detail.php" class="text-dark text-decoration-none">
-                            <img src="assets/images/การ์ดสไลด์.2.jpg" class="image-news rounded" alt="News-2">
-                            <div class="card-body">
-                                <h5 class="fw-bold">News</h5>
-                                <h6 class="text-primary">5 สิงหาคม 2568</h6>
-                                <h6>- ยอดขายทะลุ 1.6 ล้าน</h6>
-                                <h6>- ขอบคุณลูกค้าที่ให้การสนับสนุน TITAN EV</h6>
+
+                <!-- Modal -->
+                <div class="modal fade" id="detail-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">News-1</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                        </a>
+                            <div class="modal-body text-wrap">
+                                <h6>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo eius vero beatae
+                                    porro quibusdam voluptatem eum incidunt dolorem veniam!
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card my-3 me-4 hover-news">
-                        <a href="news_detail.php" class="text-dark text-decoration-none">
-                            <img src="assets/images/การ์ดสไลด์.3.jpg" class="image-news rounded" alt="News-3">
-                            <div class="card-body">
-                                <h5 class="fw-bold">News</h5>
-                                <h6 class="text-primary">4 สิงหาคม 2568</h6>
-                                <h6>- TITAN 1.1 M รถกระบะไฟฟ้าสายลุย</h6>
-                                <h6>- แบตเตอรี่ 60V 25Ah มอเตอร์แรง 1,000 วัตต์</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card my-3 me-4 hover-news">
-                        <a href="news_detail.php" class="text-dark text-decoration-none">
-                            <img src="assets/images/การ์ดสไลด์ 4.jpg" class="image-news rounded" alt="News-4">
-                            <div class="card-body">
-                                <h5 class="fw-bold">News</h5>
-                                <h6 class="text-primary">4 สิงหาคม 2568</h6>
-                                <h6>- รับน้ำหนักได้สูงถึง 800 กิโลกรัม</h6>
-                                <h6>- ไม่มีควัน ไม่มีเสียง ค่าไฟถูกกว่าค่าน้ำมัน</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card my-3 me-4 hover-news">
-                        <a href="news_detail.php" class="text-dark text-decoration-none">
-                            <img src="assets/images/การ์ดสไลด์ 5.jpg" class="image-news rounded" alt="News-5">
-                            <div class="card-body">
-                                <h5 class="fw-bold">News</h5>
-                                <h6 class="text-primary">4 สิงหาคม 2568</h6>
-                                <h6>- รถบรรทุกสามล้อไฟฟ้า รุ่น 1.6M มอเตอร์ 1600 วัตต์</h6>
-                                <h6>- เหมาะสำหรับพ่อค้าแม่ค้า ร้านส่งของ ธุรกิจออนไลน์</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
 
