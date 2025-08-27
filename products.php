@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <h4>TITAN EV Model X</h4>
                         <h6>พลังงานไฟฟ้า 1000W ความเร็วสูงสุด 60 กม./ชม. <br> ดีไซน์ล้ำสมัย พร้อมระบบเบรกนิรภัย</h6>
-                        <a href="#" class="btn btn-dark float-end">ดูรายละเอียด</a>
+                        <a href="product_detail.php" class="btn btn-dark float-end">ดูรายละเอียด</a>
                     </div>
                 </div>
             </div>

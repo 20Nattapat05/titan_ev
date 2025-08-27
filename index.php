@@ -63,10 +63,10 @@
             <div class="carousel-wrap">
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news-detail.php" class="text-dark text-decoration-none">
+                        <a href="news_detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.1.jpg" class="image-news rounded" alt="News-1">
                             <div class="card-body">
-                                <h5 class="fw-bold">EVENT</h5>
+                                <h5 class="fw-bold">News</h5>
                                 <h6 class="text-primary">6 สิงหาคม 2568</h6>
                                 <h6>- ใช้ง่าย ปลอดภัย มั่นคง ประหยัดพลังงาน</h6>
                                 <h6>- รถสามล้อไฟฟ้ารุ่นใหม่ มอเตอร์ 1000W 60V 25Ah</h6>
@@ -76,10 +76,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news-detail.php" class="text-dark text-decoration-none">
+                        <a href="news_detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.2.jpg" class="image-news rounded" alt="News-2">
                             <div class="card-body">
-                                <h5 class="fw-bold">EVENT</h5>
+                                <h5 class="fw-bold">News</h5>
                                 <h6 class="text-primary">5 สิงหาคม 2568</h6>
                                 <h6>- ยอดขายทะลุ 1.6 ล้าน</h6>
                                 <h6>- ขอบคุณลูกค้าที่ให้การสนับสนุน TITAN EV</h6>
@@ -89,10 +89,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news-detail.php" class="text-dark text-decoration-none">
+                        <a href="news_detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์.3.jpg" class="image-news rounded" alt="News-3">
                             <div class="card-body">
-                                <h5 class="fw-bold">EVENT</h5>
+                                <h5 class="fw-bold">News</h5>
                                 <h6 class="text-primary">4 สิงหาคม 2568</h6>
                                 <h6>- TITAN 1.1 M รถกระบะไฟฟ้าสายลุย</h6>
                                 <h6>- แบตเตอรี่ 60V 25Ah มอเตอร์แรง 1,000 วัตต์</h6>
@@ -102,10 +102,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news-detail.php" class="text-dark text-decoration-none">
+                        <a href="news_detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 4.jpg" class="image-news rounded" alt="News-4">
                             <div class="card-body">
-                                <h5 class="fw-bold">EVENT</h5>
+                                <h5 class="fw-bold">News</h5>
                                 <h6 class="text-primary">4 สิงหาคม 2568</h6>
                                 <h6>- รับน้ำหนักได้สูงถึง 800 กิโลกรัม</h6>
                                 <h6>- ไม่มีควัน ไม่มีเสียง ค่าไฟถูกกว่าค่าน้ำมัน</h6>
@@ -115,10 +115,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
-                        <a href="news-detail.php" class="text-dark text-decoration-none">
+                        <a href="news_detail.php" class="text-dark text-decoration-none">
                             <img src="assets/images/การ์ดสไลด์ 5.jpg" class="image-news rounded" alt="News-5">
                             <div class="card-body">
-                                <h5 class="fw-bold">EVENT</h5>
+                                <h5 class="fw-bold">News</h5>
                                 <h6 class="text-primary">4 สิงหาคม 2568</h6>
                                 <h6>- รถบรรทุกสามล้อไฟฟ้า รุ่น 1.6M มอเตอร์ 1600 วัตต์</h6>
                                 <h6>- เหมาะสำหรับพ่อค้าแม่ค้า ร้านส่งของ ธุรกิจออนไลน์</h6>
