@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if ($_SESSION['admin_id'] == '') {
+        header('Location: login.php');
+        exit();
+    }
+?>
 <div class="card shadow-sm bg-dark">
     <div class="card-body">
         <!-- Main Content Area -->
