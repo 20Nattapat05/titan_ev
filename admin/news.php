@@ -1,3 +1,9 @@
+<?php
+  include('../functions/config.php');
+  if (!isset($_SESSION['admin_login'])) {
+    header('location: login.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

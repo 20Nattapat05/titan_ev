@@ -1,3 +1,9 @@
+<?php
+include('../functions/config.php');
+if (!isset($_SESSION['admin_login'])) {
+  header('location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +36,7 @@
 
 
       <div class="container-fluid col py-3">
-        
+
 
         <?php
         // Navbar and Overview Cards
@@ -38,7 +44,6 @@
         ?>
 
 
-        </div>
         <div class="card shadow-sm bg-dark mt-4 overflow-auto " style="height: 60vh;">
           <div class="card-body text-white">
             <div class="row mb-4">
@@ -46,7 +51,7 @@
                 <h2 class="text-light mb-1">
                   <i class="bi-envelope-fill me-2"></i>Inbox
                 </h2>
-                <p class="text-light">ข้อความที่ยังไม่ได้อ่าน (12 ข้อความ)</p>
+                <p class="text-light">ข้อความที่ยังไม่ได้อ่าน (<?= $unreadMessages ?>)</p>
               </div>
               <div class="col-md-4 col-12 ">
                 <div class="input-group">
@@ -70,6 +75,14 @@
             <div class="container-fluid">
               <div class="row g-3">
 
+              <?php
+                $sql = "SELECT * FROM email_tb";
+                $query = $conn->query($sql);
+                if ($query->num_rows > 0) {
+                  while ($row = $query->fetch_assoc()) {
+
+              ?>
+
                 <div class="col-12 col-md-12">
                   <div class="message-item unread p-3 rounded "
                     data-bs-toggle="modal"
@@ -81,8 +94,7 @@
                       <div class="flex-grow-1">
                         <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap">
                           <div>
-                            <h6 class="mb-1 text-light">สมชาย ใจดี</h6>
-                            <span class="badge bg-primary">ข้อความใหม่</span>
+                            <h6 class="mb-1 text-light"><?= $row['email_name'] ?></h6>
                           </div>
                           <div class="text-end small text-muted">
                             <div class="message-time">14:25</div>
@@ -137,34 +149,8 @@
                   </div>
                 </div>
 
-
-
-                <div class="col-12 col-md-12">
-                  <div class="message-item read p-3 rounded ">
-                    <div class="d-flex flex-column flex-sm-row">
-                      <div class="message-avatar me-0 me-sm-3 mb-2 mb-sm-0 text-center">
-                        <i class="bi-person-fill fs-2"></i>
-                      </div>
-                      <div class="flex-grow-1">
-                        <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap">
-                          <div>
-                            <h6 class="mb-1 text-light">สมชาย ใจดี</h6>
-                            <span class="badge bg-primary">ข้อความใหม่</span>
-                          </div>
-                          <div class="text-end small text-muted">
-                            <div class="message-time">14:25</div>
-                          </div>
-                        </div>
-                        <h6 class="text-light mb-1">สอบถามข้อมูลรถยนต์ EV รุ่นใหม่</h6>
-                        <p class="text-secondary mb-2">สวัสดีครับ ผมสนใจรถยนต์ไฟฟ้ารุ่นใหม่ที่ออกมา อยากทราบรายละเอียดเพิ่มเติมและราคา...</p>
-                        <div class="d-flex gap-2 flex-wrap">
-                          <button class="btn btn-sm btn-outline-light">ตอบกลับ</button>
-                          <button class="btn btn-sm btn-outline-secondary">อ่านแล้ว</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <?php }
+                } ?>
 
               </div>
             </div>
