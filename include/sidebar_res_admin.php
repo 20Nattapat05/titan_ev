@@ -18,6 +18,16 @@
           <li class="nav-item">
             <a class="nav-link" href="news.php">ข่าวสาร</a>
           </li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown">เมนู</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#">Sign out</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
