@@ -20,7 +20,7 @@
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><a class="dropdown-item text-danger" href="#">Sign out</a></li>
+        <li><a href="../functions/fn_logout.php" class="dropdown-item text-danger" href="#">Sign out</a></li>
       </ul>
     </div>
   </div>

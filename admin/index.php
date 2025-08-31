@@ -44,47 +44,81 @@ if (!isset($_SESSION['admin_login'])) {
         ?>
 
 
+        <?php
+        // Defulat Varrible
+        $search = "";
+        $sort = "";
+
+        // Form Method
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          $search = isset($_POST['search']) ? trim($_POST['search']) : "";
+          $sort = isset($_POST['sort']) ? $_POST['sort'] : "";
+        }
+
+        // SQL Defualt
+        $sql = "SELECT * FROM email_tb WHERE 1";
+
+        // If have search
+        if (!empty($search)) {
+          $sql .= " AND (email_name LIKE '%$search%' OR email_title LIKE '%$search%' OR email_detail LIKE '%$search%' OR email_back LIKE '%$search%')";
+        }
+
+
+        // If have sort
+        if (!empty($sort)) {
+          $sql .= " AND email_status = '$sort'";
+        }
+
+        $query = $conn->query($sql);
+        ?>
+
         <div class="card shadow-sm bg-dark mt-4 overflow-auto " style="height: 60vh;">
           <div class="card-body text-white">
-            <div class="row mb-4">
-              <div class="col-md-4 col-12">
-                <h2 class="text-light mb-1">
-                  <i class="bi-envelope-fill me-2"></i>Inbox
-                </h2>
-                <p class="text-light">ข้อความที่ยังไม่ได้อ่าน (<?= $unreadMessages ?>)</p>
-              </div>
-              <div class="col-md-4 col-12 ">
-                <div class="input-group">
-                  <select name="sort" class="form-select" id="">
-                    <option value="">All</option>
-                    <option value="read">อ่านแล้ว</option>
-                    <option value="unread">ยังไม่ได้อ่าน</option>
-                  </select>
+            <form action="" method="post">
+              <div class="row mb-4">
+                <div class="col-md-4 col-12">
+                  <h2 class="text-light mb-1">
+                    <i class="bi-envelope-fill me-2"></i>Inbox
+                  </h2>
+                  <p class="text-light">ข้อความที่ยังไม่ได้อ่าน (<?= $unreadMessages ?>)</p>
                 </div>
-              </div>
-              <div class="col-md-4 col-12 mt-md-0 mt-2">
-                <div class="input-group">
-                  <input type="text" class="form-control search-bar" placeholder="ค้นหาข้อความ..." aria-label="Search">
-                  <button class="btn btn-outline-light" type="button">
-                    <i class="bi-search"></i>
-                  </button>
+
+
+                <div class="col-md-4 col-12 ">
+                  <div class="input-group">
+                    <select name="sort" class="form-select" id="">
+                      <option value="" <?= $sort == "" ? "selected" : "" ?>>ทั้งหมด</option>
+                      <option value="unread" <?= $sort == "unread" ? "selected" : "" ?>>ยังไม่ได้อ่าน</option>
+                      <option value="read" <?= $sort == "read" ? "selected" : "" ?>>อ่านแล้ว</option>
+                    </select>
+                  </div>
                 </div>
+
+                <div class="col-md-4 col-12 mt-md-0 mt-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control search-bar" name="search" placeholder="ค้นหาข้อความ..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                      <i class="bi-search"></i>
+                    </button>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </form>
 
             <div class="container-fluid">
               <div class="row g-3">
 
                 <?php
-                $sql = "SELECT * FROM email_tb";
-                $query = $conn->query($sql);
+
+
                 if ($query->num_rows > 0) {
                   while ($row = $query->fetch_assoc()) {
                     $modalId = "messageModal" . $row['email_id']; // ให้ modal ไม่ซ้ำกัน
                 ?>
 
                     <div class="col-12 col-md-12">
-                      <div class="message-item unread p-3 rounded"
+                      <div class="message-item <?= $row['email_status'] == "unread" ? "unread" : "read" ?> p-3 rounded"
                         data-bs-toggle="modal"
                         data-bs-target="#<?= $modalId ?>">
                         <div class="d-flex flex-column flex-sm-row">
@@ -109,8 +143,13 @@ if (!isset($_SESSION['admin_login'])) {
                               <?= mb_strimwidth($row['email_detail'], 0, 80, "...") ?>
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
-                              <button class="btn btn-sm btn-outline-light">ตอบกลับ</button>
-                              <?php if ($row['is_read'] == 0): ?>
+                              <?php
+                                if ($row['email_status'] == "unread") {
+                                  echo '<button class="btn btn-sm btn-outline-light">ตอบกลับ</button>';
+                                }
+                              ?>
+                              
+                              <?php if ($row['email_status'] == "unread"): ?>
                                 <button class="btn btn-sm btn-outline-success">ยังไม่ได้อ่าน</button>
                               <?php else: ?>
                                 <button class="btn btn-sm btn-outline-secondary">อ่านแล้ว</button>
@@ -122,53 +161,63 @@ if (!isset($_SESSION['admin_login'])) {
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content bg-dark text-light">
+                    <form action="../functions/fn_submitread.php" method="post">
 
-                          <!-- Header -->
-                          <div class="modal-header">
-                            <h5 class="modal-title">รายละเอียดข้อความ</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                          </div>
+                      <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                          <div class="modal-content bg-dark text-light">
 
-                          <!-- Body -->
-                          <div class="modal-body overflow-auto" style="max-height: 60vh;">
-                            <!-- ข้อมูลผู้ติดต่อ -->
-                            <h6 class="mb-1"><?= htmlspecialchars($row['email_name']) ?></h6>
-                            <small class="text-secondary">อีเมล: <?= htmlspecialchars($row['email_back']) ?></small><br>
-                            <small class="text-secondary">เวลา: <?= date("d/m/Y H:i", strtotime($row['email_datetime'])) ?></small>
-                            <hr>
+                            <!-- Header -->
+                            <div class="modal-header">
+                              <h5 class="modal-title">รายละเอียดข้อความ</h5>
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
 
-                            <!-- เนื้อหาข้อความ -->
-                            <h6>หัวข้อ: <?= htmlspecialchars($row['email_title']) ?></h6>
-                            <p><?= nl2br(htmlspecialchars($row['email_detail'])) ?></p>
-                          </div>
+                            <!-- Body -->
+                            <div class="modal-body overflow-auto" style="max-height: 60vh;">
+                              <!-- ข้อมูลผู้ติดต่อ -->
+                              <h6 class="mb-1"><?= htmlspecialchars($row['email_name']) ?></h6>
+                              <small class="text-secondary">อีเมล: <?= htmlspecialchars($row['email_back']) ?></small><br>
+                              <small class="text-secondary">เวลา: <?= date("d/m/Y H:i", strtotime($row['email_datetime'])) ?></small>
+                              <hr>
 
-                          <!-- Footer -->
-                          <div class="modal-footer">
-                            <button class="btn btn-success" id="markAsReadBtn" data-id="<?= $row['email_id'] ?>">📖 อ่านแล้ว</button>
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                              <!-- เนื้อหาข้อความ -->
+                              <h6>หัวข้อ: <?= htmlspecialchars($row['email_title']) ?></h6>
+                              <p><?= nl2br(htmlspecialchars($row['email_detail'])) ?></p>
+                            </div>
 
-                <?php
-                  }
-                }
-                ?>
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                              <?php
+                              if ($row['email_status'] == "unread") {
+                                echo '<button type="submit" class="btn btn-success" name="submit_read">📖 อ่านแล้ว</button>';
+                              }
+                              ?>
 
-
+                              <input type="hidden" name="email_id" value="<?= $row['email_id'] ?>">
+                    </form>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
               </div>
             </div>
-
-
           </div>
         </div>
-      </div>
 
+
+    <?php
+                  }
+                }
+    ?>
+
+
+      </div>
     </div>
+
+
+  </div>
+  </div>
+  </div>
+
+  </div>
   </div>
 
 

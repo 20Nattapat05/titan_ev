@@ -82,8 +82,8 @@ $sqlArticles = "SELECT COUNT(*) AS totalArticles FROM news_tb";
 $resArticles = $conn->query($sqlArticles);
 $totalArticles = ($row = $resArticles->fetch_assoc()) ? $row['totalArticles'] : 0;
 
-// จำนวนข้อความ unread (ต้องมีคอลัมน์ is_read หรือ email_status ก่อนนะครับ)
-$sqlMessages = "SELECT COUNT(*) AS unreadMessages FROM email_tb WHERE is_read = 0";
+// จำนวนข้อความ unread (ต้องมีคอลัมน์ email_status หรือ email_status ก่อนนะครับ)
+$sqlMessages = "SELECT COUNT(*) AS unreadMessages FROM email_tb WHERE email_status = 'unread'";
 $resMessages = $conn->query($sqlMessages);
 $unreadMessages = ($row = $resMessages->fetch_assoc()) ? $row['unreadMessages'] : 0;
 ?>
