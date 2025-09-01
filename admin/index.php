@@ -144,11 +144,11 @@ if (!isset($_SESSION['admin_login'])) {
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
                               <?php
-                              if ($row['email_status'] == "unread") {
-                                echo '<button class="btn btn-sm btn-outline-light">ตอบกลับ</button>';
-                              }
+                                if ($row['email_status'] == "unread") {
+                                  echo '<button class="btn btn-sm btn-outline-light">ตอบกลับ</button>';
+                                }
                               ?>
-
+                              
                               <?php if ($row['email_status'] == "unread"): ?>
                                 <button class="btn btn-sm btn-outline-success">ยังไม่ได้อ่าน</button>
                               <?php else: ?>
@@ -161,8 +161,8 @@ if (!isset($_SESSION['admin_login'])) {
                     </div>
 
                     <!-- Modal -->
-
                     <form action="../functions/fn_submitread.php" method="post">
+
                       <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content bg-dark text-light">
@@ -195,8 +195,8 @@ if (!isset($_SESSION['admin_login'])) {
                               ?>
 
                               <input type="hidden" name="email_id" value="<?= $row['email_id'] ?>">
-                              <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">ปิด</button>
                     </form>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
               </div>
             </div>
           </div>
