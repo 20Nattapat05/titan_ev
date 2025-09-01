@@ -72,7 +72,7 @@ if (!isset($_SESSION['admin_login'])) {
         $query = $conn->query($sql);
         ?>
 
-        <div class="card shadow-sm bg-dark mt-4 overflow-auto " style="height: 60vh;">
+        <div class="card shadow-sm bg-dark mt-4 overflow-auto " style="height: 62vh;">
           <div class="card-body text-white">
             <form action="" method="post">
               <div class="row mb-4">

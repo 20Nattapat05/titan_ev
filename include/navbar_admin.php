@@ -66,7 +66,7 @@
 
 
 <?php
-if ($_SESSION['admin_id'] == '') {
+if (!isset($_SESSION['admin_login'])) {
     header('Location: login.php');
     exit();
 }
