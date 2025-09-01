@@ -144,11 +144,11 @@ if (!isset($_SESSION['admin_login'])) {
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
                               <?php
-                                if ($row['email_status'] == "unread") {
-                                  echo '<button class="btn btn-sm btn-outline-light">ตอบกลับ</button>';
-                                }
+                              if ($row['email_status'] == "unread") {
+                                echo '<button class="btn btn-sm btn-outline-light">ตอบกลับ</button>';
+                              }
                               ?>
-                              
+
                               <?php if ($row['email_status'] == "unread"): ?>
                                 <button class="btn btn-sm btn-outline-success">ยังไม่ได้อ่าน</button>
                               <?php else: ?>
@@ -196,7 +196,9 @@ if (!isset($_SESSION['admin_login'])) {
 
                               <input type="hidden" name="email_id" value="<?= $row['email_id'] ?>">
                     </form>
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      <i class="bi bi-x-circle me-1"></i> ปิด
+                    </button>
               </div>
             </div>
           </div>
@@ -219,6 +221,36 @@ if (!isset($_SESSION['admin_login'])) {
 
   </div>
   </div>
+
+
+  <?php
+  if (isset($_GET['status'])) {
+    $status = $_GET['status'];
+
+    echo "
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    ";
+
+    if ($status == "success") {
+      echo "
+        Swal.fire({
+          icon: 'success',
+          title: 'อ่านเรียบร้อย!',
+          confirmButtonText: 'ตกลง'
+        }).then(() => {
+          // ลบ ?status=success ออกจาก URL โดยไม่ reload หน้า
+          window.history.replaceState(null, null, window.location.pathname);
+        });
+        ";
+    }
+
+    echo "
+      });
+    </script>
+    ";
+  }
+  ?>
 
 
 

@@ -11,8 +11,7 @@ if (isset($_POST['submit_read'])) {
 
     echo "
       <script>
-        alert('ทำเครื่องหมายว่าอ่านแล้ว');
-        window.location.href = '../admin/index.php';
+        window.location.href = '../admin/index.php?status=success';
       </script>
     ";
 
