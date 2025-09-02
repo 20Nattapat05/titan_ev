@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2025 at 06:34 PM
+-- Generation Time: Sep 02, 2025 at 03:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -78,8 +78,17 @@ CREATE TABLE `news_tb` (
   `news_id` int(11) NOT NULL,
   `news_title` varchar(255) NOT NULL,
   `news_detail` text NOT NULL,
+  `news_status` varchar(30) NOT NULL,
   `news_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news_tb`
+--
+
+INSERT INTO `news_tb` (`news_id`, `news_title`, `news_detail`, `news_status`, `news_date`) VALUES
+(3, '234234', '234234234234234', 'published', '2025-09-02'),
+(5, '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'loremloremloremloremloremlorem', 'published', '2025-09-02');
 
 -- --------------------------------------------------------
 
@@ -171,7 +180,7 @@ ALTER TABLE `email_tb`
 -- AUTO_INCREMENT for table `news_tb`
 --
 ALTER TABLE `news_tb`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product_tb`
