@@ -142,7 +142,7 @@ if (!isset($_SESSION['admin_login'])) {
                 $modalId = "editCarModal" . $row['product_id'];
             ?>
 
-                <div class="col-md-4 col-sm-6 col-12">
+                <div class="col-md-3 col-sm-6 col-12">
                   <div class="card car-card shadow-sm border-0 rounded-3 h-100">
                     <img src="../assets/images/car_manage/<?= $row['product_img'] ?>" class="card-img-top" alt="Model S">
                     <div class="card-body d-flex flex-column">
