@@ -25,8 +25,16 @@
                     <div class="card-body">
                         <h4 class="mb-4">แจ้งปัญหาที่พบมาทาง Admin</h4>
                         <form action="" method="post">
-                            <label for="">Email สำหรับติดต่อกลับ</label>
-                            <input type="text" class="form-control mb-3" name="" id="" required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">Full Name</label>
+                                    <input type="text" class="form-control mb-3" name="" id="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Email สำหรับติดต่อกลับ</label>
+                                    <input type="text" class="form-control mb-3" name="" id="" required>
+                                </div>
+                            </div>
                             <label for="">หัวข้อปัญหา</label>
                             <input type="text" class="form-control mb-3" name="" id="" required>
                             <label for="">เนื้อหา</label>
