@@ -12,8 +12,8 @@
 
     <?php include('include/navbar.php'); ?>
 
-    <div class="container">
-        <div class="row mt-custom">
+    <div class="container mt-custom">
+        <div class="row ">
             <div class="col-md-6">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.060622886339!2d98.95584267519838!3d18.79545148235222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a654208397b%3A0x15a774624eb0db25!2z4Liq4LiW4Liy4Lia4Lix4LiZ4Lig4Liy4Lip4LiyIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC5gOC4iuC4teC4ouC4h-C5g-C4q-C4oeC5iA!5e0!3m2!1sth!2sth!4v1756122356897!5m2!1sth!2sth"
@@ -25,19 +25,21 @@
                     <div class="card-body">
                         <h4 class="mb-4">แจ้งปัญหาที่พบมาทาง Admin</h4>
                         <form action="" method="post">
+                            <label for="">ชื่อของคุณ</label>
+                            <input type="text" class="form-control mb-3" name="" id="" required>
                             <label for="">Email สำหรับติดต่อกลับ</label>
                             <input type="text" class="form-control mb-3" name="" id="" required>
                             <label for="">หัวข้อปัญหา</label>
                             <input type="text" class="form-control mb-3" name="" id="" required>
                             <label for="">เนื้อหา</label>
-                            <textarea class="form-control mb-3" rows="5" name="" id="" required></textarea>
+                            <textarea class="form-control mb-3" rows="3" name="" id="" required></textarea>
                             <button type="submit" class="btn btn-success w-100">แจ้งปัญหา</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-5 mt-3 py-3 px-2">
+        <div class="card mb-5 mt-3 py-3 px-2 h-100"">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">

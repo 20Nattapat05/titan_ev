@@ -110,112 +110,69 @@ if (!isset($_SESSION['admin_login'])) {
             </div>
 
             <!-- ตาราง -->
-            <div class="table-responsive">
-              <table class="table table-dark table-hover align-middle">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>หัวข้อ</th>
-                    <th>ผู้เขียน</th>
-                    <th>สถานะ</th>
-                    <th>วันที่เผยแพร่</th>
-                    <th>การจัดการ</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <?php
-                  if ($query->num_rows > 0) {
-                    $i = 0; // ✅ ย้ายออกมาไว้ก่อนลูป
-                    while ($row = $query->fetch_assoc()) {
-                      $i++;
-                  ?>
-                      <tr>
-                        <td><?= $i ?></td>
-                        <td>
-                          <?= mb_strimwidth($row['news_title'], 0, 20, "...", "UTF-8"); ?>
-                        </td>
-
-                        <td>Admin</td>
-                        <td>
-                          <?php if ($row['news_status'] == 'draft') { ?>
-                            <span class="badge bg-warning">บันทึกแบบร่าง</span>
-                          <?php } else { ?>
-                            <span class="badge bg-success">เผยแพร่</span>
-                          <?php } ?>
-                        </td>
-                        <td><?= $row['news_date'] ?></td>
-                        <td>
-                          <!-- ปุ่มแก้ไข -->
-                          <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editArticleModal<?= $row['news_id'] ?>">
-                            <i class="bi bi-pencil-square"></i>
-                          </button>
-
-                          <!-- ปุ่มลบ -->
-                          <form action="../functions/fn_deletenews.php" method="post" class="d-inline">
-                            <input type="hidden" name="news_id" value="<?= $row['news_id'] ?>">
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('คุณแน่ใจหรือไม่ที่จะลบบทความนี้?');">
-                              <i class="bi bi-trash"></i>
-                            </button>
-                          </form>
-                        </td>
-                      </tr>
-
-                      <!-- Modal แก้ไขบทความ -->
-                      <div class="modal fade" id="editArticleModal<?= $row['news_id'] ?>" tabindex="-1" aria-labelledby="editArticleLabel<?= $row['news_id'] ?>" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content bg-dark text-white">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="editArticleLabel<?= $row['news_id'] ?>">แก้ไขบทความ</h5>
-                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-
-
-                              <form action="../functions/fn_updatenews.php" method="post">
-                                <input type="hidden" name="news_id" value="<?= $row['news_id'] ?>">
-
-                                <div class="mb-3">
-                                  <label class="form-label">หัวข้อ</label>
-                                  <input type="text" name="news_title" class="form-control" value="<?= htmlspecialchars($row['news_title']); ?>">
-                                </div>
-
-                                <div class="mb-3">
-                                  <label class="form-label">เนื้อหา</label>
-                                  <textarea name="news_detail" class="form-control" rows="5"><?= htmlspecialchars($row['news_detail']); ?></textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                  <label class="form-label">สถานะ</label>
-                                  <select name="news_status" class="form-select">
-                                    <option value="published" <?= $row['news_status'] == 'published' ? 'selected' : '' ?>>เผยแพร่</option>
-                                    <option value="draft" <?= $row['news_status'] == 'draft' ? 'selected' : '' ?>>ดราฟ</option>
-                                  </select>
-                                </div>
-
-
-                                <div class="modal-footer">
-                                  <button type="submit" class="btn btn-warning">อัปเดต</button>
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="bi bi-x-circle me-1"></i> ปิด
-                                  </button>
-                                </div>
-
-                              </form>
-                            </div>
-
+            <table class="table table-dark table-hover">
+              <thead class="text-center">
+                <tr>
+                  <th>#</th>
+                  <th>หัวข้อ</th>
+                  <th>ผู้เขียน</th>
+                  <th>สถานะ</th>
+                  <th>วันที่เผยแพร่</th>
+                  <th>การจัดการ</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <?php if ($query->num_rows > 0) {
+                  $i = 0;
+                  while ($row = $query->fetch_assoc()) {
+                    $i++; ?> <tr>
+                      <td><?= $i ?></td>
+                      <td> <?= mb_strimwidth($row['news_title'], 0, 20, "...", "UTF-8"); ?> </td>
+                      <td>Admin</td>
+                      <td> <?php if ($row['news_status'] == 'draft') { ?> <span class="badge bg-warning">บันทึกแบบร่าง</span> <?php } else { ?> <span class="badge bg-success">เผยแพร่</span> <?php } ?> </td>
+                      <td><?= $row['news_date'] ?></td>
+                      <td>
+                        <div class="btn-group" role="group"> <!-- ปุ่มแก้ไข --> <button class="btn btn-sm btn-warning me-3" data-bs-toggle="modal" data-bs-target="#editArticleModal<?= $row['news_id'] ?>"> <i class="bi bi-pencil-square"></i> </button> <!-- ปุ่มลบ -->
+                          <form action="../functions/fn_deletenews.php" method="post" class="d-inline"> <input type="hidden" name="news_id" value="<?= $row['news_id'] ?>"> <button type="submit" class="btn btn-sm me-3 btn-danger" onclick="return confirm('คุณแน่ใจหรือไม่ที่จะลบบทความนี้?');"> <i class="bi bi-trash"></i> </button> </form> <!-- ปุ่มดูรูป --> <?php if (!empty($row['news_img'])): ?> <button class="btn btn-sm btn-info me-3" data-bs-toggle="modal" data-bs-target="#viewImageModal<?= $row['news_id'] ?>"> <i class="bi bi-image"></i> </button> <?php endif; ?>
+                        </div>
+                      </td>
+                    </tr> <!-- Modal แก้ไขบทความ -->
+                    <div class="modal fade" id="editArticleModal<?= $row['news_id'] ?>" tabindex="-1" aria-labelledby="editArticleLabel<?= $row['news_id'] ?>" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content bg-dark text-white">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="editArticleLabel<?= $row['news_id'] ?>">แก้ไขบทความ</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="../functions/fn_updatenews.php" method="post" enctype="multipart/form-data"> <input type="hidden" name="news_id" value="<?= $row['news_id'] ?>">
+                              <div class="mb-3"> <label class="form-label">หัวข้อ</label> <input type="text" name="news_title" class="form-control" value="<?= htmlspecialchars($row['news_title']); ?>"> </div>
+                              <div class="mb-3"> <label class="form-label">เนื้อหา</label> <textarea name="news_detail" class="form-control" rows="5"><?= htmlspecialchars($row['news_detail']); ?></textarea> </div>
+                              <div class="mb-3"> <label class="form-label">สถานะ</label> <select name="news_status" class="form-select">
+                                  <option value="published" <?= $row['news_status'] == 'published' ? 'selected' : '' ?>>เผยแพร่</option>
+                                  <option value="draft" <?= $row['news_status'] == 'draft' ? 'selected' : '' ?>>ดราฟ</option>
+                                </select> </div>
+                              <div class="mb-3"> <label class="form-label">อัปโหลดรูปใหม่ (ถ้ามี)</label> <input type="file" name="image" class="form-control" accept="image/*"> <?php if (!empty($row['news_img'])): ?> <small class="text-muted">รูปปัจจุบัน: <?= htmlspecialchars($row['news_img']); ?></small> <?php endif; ?> </div>
+                              <div class="modal-footer"> <button type="submit" class="btn btn-warning">อัปเดต</button> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="bi bi-x-circle me-1"></i> ปิด </button> </div>
+                            </form>
                           </div>
                         </div>
                       </div>
-            </div>
-        <?php
-                    }
-                  }
-        ?>
+                    </div> <!-- Modal ดูรูป -->
+                    <div class="modal fade" id="viewImageModal<?= $row['news_id'] ?>" tabindex="-1" aria-labelledby="viewImageLabel<?= $row['news_id'] ?>" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content bg-dark text-white">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="viewImageLabel<?= $row['news_id'] ?>">รูปภาพบทความ</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body text-center"> <?php if (!empty($row['news_img'])): ?> <img src="../assets/images/news_manage/<?= htmlspecialchars($row['news_img']); ?>" alt="News Image" class="img-fluid rounded shadow"> <?php else: ?> <p class="text-muted">ไม่มีรูปภาพสำหรับบทความนี้</p> <?php endif; ?> </div>
+                        </div>
+                      </div>
+                    </div> <?php }
+                        } ?>
+              </tbody>
+            </table>
 
 
-        </tbody>
-        </table>
           </div>
         </div>
       </div>
@@ -231,7 +188,7 @@ if (!isset($_SESSION['admin_login'])) {
             <div class="modal-body">
 
 
-              <form action="../functions/fn_createnews.php" method="POST">
+              <form action="../functions/fn_createnews.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                   <label class="form-label">หัวข้อ</label>
                   <input type="text" name="title" class="form-control">
@@ -246,6 +203,10 @@ if (!isset($_SESSION['admin_login'])) {
                     <option value="published">เผยแพร่</option>
                     <option value="draft">ดราฟ</option>
                   </select>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">รูปภาพ</label>
+                  <input class="form-control" type="file" id="formFile" name="image" accept="image/*">
                 </div>
 
 

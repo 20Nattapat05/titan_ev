@@ -15,6 +15,6 @@ body {
 }
 
 footer {
-    margin-top: auto;
+    margin-top: 5vh;
 }
 </style>

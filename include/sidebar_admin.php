@@ -1,6 +1,6 @@
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-none d-md-block sidebar">
   <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
+    <a href="/titan_ev/admin" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none mt-3">
       <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
       <span class="fs-5 d-none d-sm-inline ms-2">EV Factory Admin</span>
     </a>
