@@ -110,4 +110,7 @@ body {
   }
 }
 
-/* detail-end */
+.bottom-end-10 {
+  bottom: 100px;
+  right: 30px;
+}

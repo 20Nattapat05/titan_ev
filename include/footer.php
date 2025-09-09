@@ -1,3 +1,5 @@
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <footer class="bg-dark text-center py-3">
     <h6 class="text-light">© 2025 TITAN-EV <span class="ms-2">All rights reserved.</span></h6>
 </footer>

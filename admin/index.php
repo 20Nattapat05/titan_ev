@@ -1,7 +1,8 @@
 <?php
 include('../functions/config.php');
-if (!isset($_SESSION['admin_login'])) {
+if (empty($_SESSION['admin_login'])) {
   header('location: login.php');
+  exit();
 }
 ?>
 <!DOCTYPE html>
