@@ -10,7 +10,10 @@
 
 <body>
 
-    <?php include('include/navbar.php'); ?>
+    <?php
+        include('functions/config.php');
+        include('include/navbar.php');
+    ?>
 
     <div class="container">
 
@@ -62,9 +65,9 @@
         <div class="carousel-container">
             <div class="carousel-wrap">
                 <?php
-                    $i = 1;
-                    while($i <= 5){
-                    $i++;
+                    $sql = "SELECT * FROM news_tb";
+                    $query = $conn->query($sql);
+                    while($row = $query->fetch_assoc()){
                 ?>
                 <div class="col-md-3">
                     <div class="card my-3 me-4 hover-news">
@@ -72,10 +75,9 @@
                             data-bs-target="#detail-1">
                             <img src="assets/images/การ์ดสไลด์.1.jpg" class="image-news rounded" alt="News-1">
                             <div class="card-body">
-                                <h5 class="fw-bold">News</h5>
-                                <h6 class="text-primary">6 สิงหาคม 2568</h6>
-                                <h6>- ใช้ง่าย ปลอดภัย มั่นคง ประหยัดพลังงาน</h6>
-                                <h6>- รถสามล้อไฟฟ้ารุ่นใหม่ มอเตอร์ 1000W 60V 25Ah</h6>
+                                <h5 class="fw-bold"><?php echo $row['news_title']; ?></h5>
+                                <h6 class="text-primary"><?php echo $row['news_date']; ?></h6>
+                                <h6><?php echo $row['news_detail']; ?></h6>
                             </div>
                         </a>
                     </div>

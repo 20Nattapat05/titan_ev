@@ -44,21 +44,30 @@ body {
 }
 
 .carousel-container {
+  display: flex;
+  gap: 1rem;
   overflow-x: auto;
   overflow-y: hidden;
-  white-space: nowrap;
   scroll-behavior: smooth;
   cursor: grab;
   -webkit-overflow-scrolling: touch;
-}
-
-.carousel-wrap {
-  display: inline-flex;
+  min-height: 400px;
+  min-width: 100%;
 }
 
 .carousel-container::-webkit-scrollbar {
   display: none;
 }
+
+.carousel-wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-wrap .card {
+  flex: 0 0 280px;
+}
+
 
 .image-news-main {
   width: 100%;
