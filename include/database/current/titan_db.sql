@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2025 at 02:08 PM
+-- Generation Time: Sep 10, 2025 at 04:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,6 +59,22 @@ CREATE TABLE `email_tb` (
   `email_datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `email_tb`
+--
+
+INSERT INTO `email_tb` (`email_id`, `email_name`, `email_back`, `email_title`, `email_status`, `email_detail`, `email_datetime`) VALUES
+(4, 'สมชาย ใจดี', 'somchai@example.com', 'สอบถามเกี่ยวกับสินค้า', 'unread', 'อยากทราบรายละเอียดเพิ่มเติมเกี่ยวกับรุ่นรถล่าสุดครับ', '2025-09-10 20:24:23'),
+(5, 'สุดา สวยงาม', 'suda@example.com', 'การชำระเงิน', 'unread', 'โอนเงินแล้ว อยากทราบว่าทางบริษัทได้รับหรือยังคะ', '2025-09-10 20:24:23'),
+(6, 'วิชัย กล้าหาญ', 'wichai@example.com', 'ขอใบเสนอราคา', 'read', 'รบกวนขอใบเสนอราคาสำหรับรถยนต์ไฟฟ้ารุ่น A1 จำนวน 3 คันครับ', '2025-09-10 20:24:23'),
+(7, 'ศิริพร ใจดี', 'siriporn@example.com', 'ปัญหาการใช้งาน', 'unread', 'รถไม่สามารถชาร์จไฟได้ อยากให้ช่วยตรวจสอบค่ะ', '2025-09-10 20:24:23'),
+(8, 'อนันต์ สุขใจ', 'anan@example.com', 'ติดต่อเพื่อขอข้อมูล', 'read', 'สนใจเข้าร่วมเป็นตัวแทนจำหน่ายสินค้า อยากทราบรายละเอียดเพิ่มเติมครับ', '2025-09-10 20:24:23'),
+(9, 'พิมพ์ใจ อ่อนหวาน', 'pimjai@example.com', 'สอบถามโปรโมชั่น', 'unread', 'ตอนนี้มีโปรโมชั่นสำหรับรุ่น SUV หรือไม่คะ', '2025-09-10 20:24:23'),
+(10, 'กิตติพงษ์ พัฒนศักดิ์', 'kitti@example.com', 'นัดหมายทดลองขับ', 'read', 'อยากนัดหมายทดลองขับรถรุ่น B2 วันเสาร์นี้ครับ', '2025-09-10 20:24:23'),
+(11, 'รัตนา วิเศษ', 'ratana@example.com', 'การรับประกันสินค้า', 'unread', 'อยากทราบรายละเอียดการรับประกันรถยนต์ไฟฟ้ารุ่น X3 ค่ะ', '2025-09-10 20:24:23'),
+(12, 'ธีระชัย ตั้งมั่น', 'teerachai@example.com', 'สมัครงาน', 'read', 'ส่งเรซูเม่มาเพื่อสมัครงานตำแหน่งวิศวกรฝ่ายขายครับ', '2025-09-10 20:24:23'),
+(13, 'มนัส สุขสันต์', 'manut@example.com', 'ขอความช่วยเหลือด่วน', 'unread', 'เกิดเหตุไฟฟ้าขัดข้องขณะใช้งาน ต้องการความช่วยเหลือเร่งด่วนครับ', '2025-09-10 20:24:23');
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +89,16 @@ CREATE TABLE `news_tb` (
   `news_date` date NOT NULL,
   `news_img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news_tb`
+--
+
+INSERT INTO `news_tb` (`news_id`, `news_title`, `news_detail`, `news_status`, `news_date`, `news_img`) VALUES
+(1, 'อัปเดตรถยนต์ไฟฟ้ารุ่', 'ทางบริษัทได้เปิดตัวรถยนต์ไฟฟ้ารุ่นใหม่ล่าสุด พร้อมเทคโนโลยีการชาร์จที่รวดเร็วกว่าเดิม', 'published', '2025-09-10', 'news1.jpg'),
+(2, 'โปรโมชั่นพิเศษเดือนก', 'รับส่วนลดสูงสุดถึง 20% สำหรับการสั่งจองรถยนต์ไฟฟ้าภายในเดือนนี้เท่านั้น', 'published', '2025-09-10', 'news2.jpg'),
+(3, 'งานแสดงเทคโนโลยี EV ', 'เชิญร่วมชมงานแสดงเทคโนโลยียานยนต์ไฟฟ้าที่ศูนย์ประชุมแห่งชาติสิริกิติ์', 'draft', '2025-09-10', 'news3.jpg'),
+(4, 'ขยายศูนย์บริการทั่วป', 'บริษัทเตรียมขยายศูนย์บริการครอบคลุมทั่วประเทศ เพื่ออำนวยความสะดวกแก่ลูกค้า', 'published', '2025-09-10', 'news4.jpg');
 
 -- --------------------------------------------------------
 
@@ -89,6 +115,13 @@ CREATE TABLE `product_tb` (
   `product_type_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `product_tb`
+--
+
+INSERT INTO `product_tb` (`product_id`, `product_name`, `product_price`, `product_detail`, `product_img`, `product_type_id`) VALUES
+(1, 'รุ่นที่ 1', 12000, 'loremloremloremlorem', '68c185ed0ca93.jpg', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +133,14 @@ CREATE TABLE `product_type_tb` (
   `product_type_name` varchar(255) NOT NULL,
   `product_type_detail` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product_type_tb`
+--
+
+INSERT INTO `product_type_tb` (`product_type_id`, `product_type_name`, `product_type_detail`) VALUES
+(1, 'ประเภทที่ 1', ''),
+(2, 'ประเภทที่ 2', 'loremloremloremlorem');
 
 --
 -- Indexes for dumped tables
@@ -149,25 +190,25 @@ ALTER TABLE `admin_tb`
 -- AUTO_INCREMENT for table `email_tb`
 --
 ALTER TABLE `email_tb`
-  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `news_tb`
 --
 ALTER TABLE `news_tb`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_tb`
 --
 ALTER TABLE `product_tb`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_type_tb`
 --
 ALTER TABLE `product_type_tb`
-  MODIFY `product_type_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
