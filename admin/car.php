@@ -144,7 +144,7 @@ if (empty($_SESSION['admin_login'])) {
 
                 <div class="col-md-3 col-sm-6 col-12">
                   <div class="card car-card shadow-sm border-0 rounded-3 h-100">
-                    <img src="../assets/images/car_manage/<?= $row['product_img'] ?>" class="card-img-top" alt="Model S">
+                    <img src="../assets/images/<?= $row['product_img'] ?>" class="card-img-top" alt="Model S">
                     <div class="card-body d-flex flex-column">
                       <h5 class="card-title fw-bold text-dark"><?= htmlspecialchars($row['product_name']) ?></h5>
                       <p class="card-text text-secondary mb-1">ราคา: <?= htmlspecialchars($row['product_price']) ?></p>

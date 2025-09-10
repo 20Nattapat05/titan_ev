@@ -154,8 +154,17 @@ if (empty($_SESSION['admin_login'])) {
                                 <button class="btn btn-sm btn-outline-success">ยังไม่ได้อ่าน</button>
                               <?php else: ?>
                                 <button class="btn btn-sm btn-outline-secondary">อ่านแล้ว</button>
+
+                                <!-- ปุ่มลบ เฉพาะสถานะ "read" -->
+                                <form action="../functions/fn_deleteemail.php" method="post" onsubmit="return confirm('คุณแน่ใจหรือไม่ที่จะลบข้อความนี้?');">
+                                  <input type="hidden" name="email_id" value="<?= $row['email_id'] ?>">
+                                  <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> ลบ
+                                  </button>
+                                </form>
                               <?php endif; ?>
                             </div>
+
                           </div>
                         </div>
                       </div>
@@ -227,6 +236,8 @@ if (empty($_SESSION['admin_login'])) {
   <?php
   if (isset($_GET['status'])) {
     $status = $_GET['status'];
+    $title = isset($_GET['title']) ? htmlspecialchars($_GET['title'], ENT_QUOTES, 'UTF-8') : '';
+    $msg = isset($_GET['msg']) ? htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8') : '';
 
     echo "
     <script>
@@ -237,10 +248,22 @@ if (empty($_SESSION['admin_login'])) {
       echo "
         Swal.fire({
           icon: 'success',
-          title: 'อ่านเรียบร้อย!',
+          title: '$title!',
+          text: '$msg',
           confirmButtonText: 'ตกลง'
         }).then(() => {
           // ลบ ?status=success ออกจาก URL โดยไม่ reload หน้า
+          window.history.replaceState(null, null, window.location.pathname);
+        });
+        ";
+    } elseif ($status == "error") {
+      echo "
+        Swal.fire({
+          icon: 'error',
+          title: '$title!',
+          text: '$msg',
+          confirmButtonText: 'ลองใหม่'
+        }).then(() => {
           window.history.replaceState(null, null, window.location.pathname);
         });
         ";

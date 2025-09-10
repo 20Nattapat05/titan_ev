@@ -203,7 +203,7 @@ if (empty($_SESSION['admin_login'])) {
                                                     class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                             </div>
                                             <div class="modal-body text-center"> <?php if (!empty($row['news_img'])): ?>
-                                                <img src="../assets/images/news_manage/<?= htmlspecialchars($row['news_img']); ?>"
+                                                <img src="../assets/images/<?= htmlspecialchars($row['news_img']); ?>"
                                                     alt="News Image" class="img-fluid rounded shadow"> <?php else: ?> <p
                                                     class="text-muted">ไม่มีรูปภาพสำหรับบทความนี้</p> <?php endif; ?>
                                             </div>
@@ -234,11 +234,11 @@ if (empty($_SESSION['admin_login'])) {
                             <form action="../functions/fn_createnews.php" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label class="form-label">หัวข้อ</label>
-                                    <input type="text" name="title" class="form-control">
+                                    <input type="text" name="title" class="form-control"required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">เนื้อหา</label>
-                                    <textarea class="form-control" name="detail" rows="5"></textarea>
+                                    <textarea class="form-control" name="detail" rows="5"required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">สถานะ</label>
@@ -249,7 +249,7 @@ if (empty($_SESSION['admin_login'])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">รูปภาพ</label>
-                                    <input class="form-control" type="file" id="formFile" name="image" accept="image/*">
+                                    <input class="form-control" type="file" id="formFile" name="image" accept="image/*" required>
                                 </div>
 
 

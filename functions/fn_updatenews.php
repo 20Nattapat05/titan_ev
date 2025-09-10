@@ -6,6 +6,7 @@ $title   = $_POST['news_title'];
 $content = $_POST['news_detail'];
 $status  = $_POST['news_status'];
 
+
 $news_img = null;
 
 // ถ้ามีการอัปโหลดรูปใหม่
@@ -15,10 +16,20 @@ if (!empty($_FILES["image"]["name"])) {
 
   $ext      = pathinfo($fileName, PATHINFO_EXTENSION);
   $new_name = uniqid() . "." . $ext;                   
-  $path     = "../assets/images/news_manage/" . $new_name;
+  $path     = "../assets/images/" . $new_name;
 
   if (move_uploaded_file($fileName_tmp, $path)) {
     $news_img = $new_name;
+  }
+}
+
+if ($news_img === null) {
+  // ถ้าไม่มีการอัปโหลดรูปใหม่ ให้ดึงชื่อรูปเดิมจากฐานข้อมูล
+  $sql = "SELECT news_img FROM news_tb WHERE news_id = '$news_id'";
+  $result = $conn->query($sql);
+  if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $news_img = $row['news_img'];
   }
 }
 
