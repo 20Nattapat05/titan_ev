@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2025 at 02:57 PM
+-- Generation Time: Sep 02, 2025 at 03:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,10 +51,22 @@ INSERT INTO `admin_tb` (`admin_id`, `admin_fname`, `admin_lname`, `admin_email`,
 
 CREATE TABLE `email_tb` (
   `email_id` int(11) NOT NULL,
+  `email_name` varchar(255) NOT NULL,
   `email_back` varchar(255) NOT NULL,
-  `email_title` varchar(255) NOT NULL,
-  `email_detail` text NOT NULL
+  `email_title` text NOT NULL,
+  `email_status` varchar(10) NOT NULL,
+  `email_detail` text NOT NULL,
+  `email_datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `email_tb`
+--
+
+INSERT INTO `email_tb` (`email_id`, `email_name`, `email_back`, `email_title`, `email_status`, `email_detail`, `email_datetime`) VALUES
+(1, '111', '1@gmail.com', 'loremloremloremloremloremlorem', 'read', 'loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem', '2025-08-30 14:34:34'),
+(2, '222', '2@gmail.com', 'loremloremloremloremloremloremlorem', 'read', 'loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem', '2025-08-11 13:34:34'),
+(4, '333', '3@gmail.com', 'loremloremloremloremlorem', 'read', 'loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem', '2025-08-06 11:36:21');
 
 -- --------------------------------------------------------
 
@@ -66,8 +78,17 @@ CREATE TABLE `news_tb` (
   `news_id` int(11) NOT NULL,
   `news_title` varchar(255) NOT NULL,
   `news_detail` text NOT NULL,
+  `news_status` varchar(30) NOT NULL,
   `news_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news_tb`
+--
+
+INSERT INTO `news_tb` (`news_id`, `news_title`, `news_detail`, `news_status`, `news_date`) VALUES
+(3, '234234', '234234234234234', 'published', '2025-09-02'),
+(5, '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'loremloremloremloremloremlorem', 'published', '2025-09-02');
 
 -- --------------------------------------------------------
 
@@ -80,8 +101,30 @@ CREATE TABLE `product_tb` (
   `product_name` varchar(255) NOT NULL,
   `product_price` int(11) NOT NULL,
   `product_detail` text NOT NULL,
-  `product_status` int(1) NOT NULL
+  `product_img` text NOT NULL,
+  `product_type_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_type_tb`
+--
+
+CREATE TABLE `product_type_tb` (
+  `product_type_id` int(11) NOT NULL,
+  `product_type_name` varchar(255) NOT NULL,
+  `product_type_detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product_type_tb`
+--
+
+INSERT INTO `product_type_tb` (`product_type_id`, `product_type_name`, `product_type_detail`) VALUES
+(7, '123123', '123123'),
+(9, '`1111', '1111'),
+(10, '111', '1111');
 
 --
 -- Indexes for dumped tables
@@ -112,6 +155,12 @@ ALTER TABLE `product_tb`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `product_type_tb`
+--
+ALTER TABLE `product_type_tb`
+  ADD PRIMARY KEY (`product_type_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -125,19 +174,25 @@ ALTER TABLE `admin_tb`
 -- AUTO_INCREMENT for table `email_tb`
 --
 ALTER TABLE `email_tb`
-  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `news_tb`
 --
 ALTER TABLE `news_tb`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product_tb`
 --
 ALTER TABLE `product_tb`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `product_type_tb`
+--
+ALTER TABLE `product_type_tb`
+  MODIFY `product_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
