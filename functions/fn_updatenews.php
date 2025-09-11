@@ -16,7 +16,7 @@ if (!empty($_FILES["image"]["name"])) {
 
   $ext      = pathinfo($fileName, PATHINFO_EXTENSION);
   $new_name = uniqid() . "." . $ext;                   
-  $path     = "../assets/images/" . $new_name;
+  $path     = "../assets/images/news_images/" . $new_name;
 
   if (move_uploaded_file($fileName_tmp, $path)) {
     $news_img = $new_name;

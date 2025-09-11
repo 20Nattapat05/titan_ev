@@ -15,7 +15,7 @@
     $ext = pathinfo($product_image, PATHINFO_EXTENSION); // Get the file extension .png/.jpeg
     $new_name = uniqid().".".$ext; // Create a new unique file name Ex. pic.jpg
 
-    $path = "../assets/images/".$new_name; // Path to save the uploaded file Ex. assets/img/pic.jpg
+    $path = "../assets/images/car_images/".$new_name; // Path to save the uploaded file Ex. assets/img/pic.jpg
 
     move_uploaded_file($product_image_tmp, $path); // Move the Tmp file path to the specified path Ex. tmp/pic.jpg to assets/img/pic.jpg
 

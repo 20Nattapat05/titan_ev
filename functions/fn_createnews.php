@@ -15,7 +15,7 @@ if (!empty($_FILES["image"]["name"])) {
     $ext = pathinfo($fileName, PATHINFO_EXTENSION); // ดึงนามสกุลไฟล์
     $new_name = uniqid() . "." . $ext; // สร้างชื่อไฟล์ใหม่เพื่อป้องกันชื่อซ้ำ
 
-    $path = "../assets/images/".$new_name;
+    $path = "../assets/images/news_images/".$new_name;
 
     // ย้ายไฟล์ไปยังโฟลเดอร์เป้าหมาย
     if (move_uploaded_file($fileName_tmp, $path)) {

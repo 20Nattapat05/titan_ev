@@ -203,7 +203,7 @@ if (empty($_SESSION['admin_login'])) {
                                                     class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                                             </div>
                                             <div class="modal-body text-center"> <?php if (!empty($row['news_img'])): ?>
-                                                <img src="../assets/images/<?= htmlspecialchars($row['news_img']); ?>"
+                                                <img src="../assets/images/news_images/<?= htmlspecialchars($row['news_img']); ?>"
                                                     alt="News Image" class="img-fluid rounded shadow"> <?php else: ?> <p
                                                     class="text-muted">ไม่มีรูปภาพสำหรับบทความนี้</p> <?php endif; ?>
                                             </div>
